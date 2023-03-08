@@ -107,7 +107,7 @@ class Question(models.Model):
     # Foreign key to lesson
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     # question text
-    text = models.CharField(max_length=200, default="text")
+    text = models.TextField()
     # question grade/mark
     mark = models.IntegerField(default=0)
 
@@ -131,7 +131,7 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
+    choice_text = models.TextField()
     is_correct = models.BooleanField(default=False)
 # <HINT> The submission model
 # One enrollment could have multiple submission
